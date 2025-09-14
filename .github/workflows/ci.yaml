@@ -1,0 +1,17 @@
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - ci
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+
+      - name: Dogfood
+        uses: ./
